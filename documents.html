@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+  <title>Registraion Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Document Form</h2>
+    </div>
+    <form class="form" id="form" onSubmit="return Filevalidation()" method="POST" action="thankyou.html">
+      <div class="form-control">
+        <label class="required" for="">Recent Passport size photo</label>
+        <input class="inputt" type="file" name="file" id="file" autocomplete="off">
+      </div>
+      <div class="form-control">
+        <label class="required" for="">HSC mark sheet</label>
+        <input class="inputt" type="file" name="file1" id="file1"  autocomplete="off">
+      </div>
+      <div class="form-control">
+        <label class="required" for="">SSC mark sheet</label>
+        <input class="inputt" type="file" name="file2" id="file2" placeholder="" accept="application/* , image/jpeg ,image/x-png" autocomplete="off">
+      </div>
+      <div class="form-control">
+        <label class="required" for="">All semesters mark sheet in a single PDF or docs</label>
+        <input class="inputt" type="file" name="filey" id="filey" placeholder="" accept="application/*" autocomplete="off">
+      </div>
+      <a href="thankyou.html">
+        <input type="submit" name="submit" value="Submit" class="btn">
+      </a>
+    </form>
+  </div>
+</body>
+<script type="text/javascript">
+  // function Checkfiles()
+  //       {
+  //       var fup = document.getElementById('filename');
+  //       var fileName = fup.value;
+  //       var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+  //       if(ext != "jpeg" || ext != "png" )
+  //       {
+  //       return false;
+  //       } 
+  //       if
+  //       {
+  //       alert("Upload jpeg/png files only");
+  //       fup.focus();
+  //       return false;
+  //       }
+  //       }
+
+        Filevalidation = () => {
+            const fi = document.getElementById('file');
+            // Check if any file is selected.
+            if (fi.files.length > 0) {
+              var filenm = fi.value;
+              var ext = filenm.substring(filenm.lastIndexOf('.') + 1);
+              if(ext == "jpeg" || ext == "png" ){
+                for (const i = 0; i <= fi.files.length - 1; i++) {
+          
+                    const fsize = fi.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file >= 4096) {
+                        alert(
+                          "File too Big, please select a file less than 4mb");
+                    } else if (file < 1) {
+                        alert(
+                          "File too small, please select a file greater than 1b");
+                    } 
+                    else{
+                      fg.focus();
+                    }
+                }
+              }
+              else{
+                alert("Upload jpeg/png files only");
+                  fi.focus();
+                  return false;
+              }
+            }
+            const fg = document.getElementById('file1');
+            // Check if any file is selected.
+            if (fg.files.length > 0) {
+              var filenm = fg.value;
+              var ext = filenm.substring(filenm.lastIndexOf('.') + 1);
+              if(ext == "pdf" || ext == "docx" ){
+                for (const i = 0; i <= fg.files.length - 1; i++) {
+          
+                    const fsize = fg.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file1 >= 4096) {
+                        alert(
+                          "File too Big, please select a file less than 4mb");
+                    } else if (file1 < 1) {
+                        alert(
+                          "File too small, please select a file greater than 2b");
+                    } 
+                    else{
+                      fh.focus();
+                    }
+                }
+              }
+              else{
+                alert("Upload pdf/docs files only");
+                  fg.focus();
+                  return false;
+              }
+            }
+            const fh = document.getElementById('file2');
+            // Check if any file is selected.
+            if (fh.files.length > 0) {
+              var filenm = fh.value;
+              var ext = filenm.substring(filenm.lastIndexOf('.') + 1);
+              if(ext == "pdf" || ext == "docx" ){
+                for (const i = 0; i <= fh.files.length - 1; i++) {
+          
+                    const fsize = fg.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (file2 >= 4096) {
+                        alert(
+                          "File too Big, please select a file less than 4mb");
+                    } else if (file2 < 1) {
+                        alert(
+                          "File too small, please select a file greater than 3b");
+                    } 
+                    else{
+                      fk.focus();
+                    }
+                }
+              }
+              else{
+                alert("Upload pdf/docs files only");
+                  fh.focus();
+                  return false;
+              }
+            }
+            const fk = document.getElementById('filey');
+            // Check if any file is selected.
+            if (fk.files.length > 0) {
+              var filenm = fk.value;
+              var ext = filenm.substring(filenm.lastIndexOf('.') + 1);
+              if(ext == "pdf" || ext == "docx" ){
+                for (const i = 0; i <= fk.files.length - 1; i++) {
+          
+                    const fsize = fk.files.item(i).size;
+                    const file = Math.round((fsize / 1024));
+                    // The size of the file.
+                    if (filey >= 10240) {
+                        alert(
+                          "File too Big, please select a file less than 10 mb");
+                    }
+                    else{
+                      return true;
+                    } 
+                }
+              }
+              else{
+                alert("Upload pdf/docs files only");
+                  fk.focus();
+                  return false;
+              }
+            }
+        }
+
+
+</script>
+</html>

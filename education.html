@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+  <title>Registraion Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+    
+</head>
+<body onload="document.registration.hscin.focus();">
+  <div class="container">
+    <div class="header">
+      <h2>education Form</h2>
+    </div>
+    <form class="form" name='registration' id="form" onSubmit="return validation()" method="POST" action="documents.html">
+      <div class="form-control error">
+        <label class="required" for="hscin">HSC Institution Name</label>
+        <input class="inputt" type="text" name="hscin" id="hscin"  placeholder="HSC Institution" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="hscb">HSC Board (i.e CBSE,ICSE or State board)</label>
+        <input class="inputt" type="text" name="hscb" id="hscb" placeholder="HSC Board" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="hscp">Score in SSC in %</label>
+        <input class="inputt" type="number" name="hscp" id="hscp" placeholder="HSC percentage" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="sscin">SSC Institution Name</label>
+        <input class="inputt" type="text" name="sscin" id="sscin"  placeholder="SSC Institution" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="sscb">SSC Board (i.e CBSE,ICSE or State board)</label>
+        <input class="inputt" type="text" name="sscb" id="sscb"  placeholder="SSC Board" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="sscp">Score in SSC in %</label>
+        <input class="inputt" type="number" name="sscp" id="sscp" placeholder="SSC percentage" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="cp">Currently Persuing</label>
+        <input class="inputt" type="text" name="cp" id="cp"  placeholder="HSC Board" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="">Current educational Institution Name</label>
+        <input class="inputt" type="text" name="cein" id="cein"  placeholder="Current educational Institution Name" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="cein">Overall Percentage</label>
+        <input class="inputt" type="number" name="op" id="op" placeholder="Overall Percentage" autocomplete="off">
+      </div>
+      <div class="form-control error">
+        <label class="required" for="cb">Current backlogs if any!!</label>
+        <input class="inputt" type="number" name="cb" id="cb"  placeholder="no of backlogs" autocomplete="off">
+      </div>
+      <a href="documents.html">
+        <input type="submit" name="submit" value="Submit" class="btn">
+      </a>
+    </form>
+  </div>
+</body>
+<script type="text/javascript">
+  function validation() {
+    var hscin = document.getElementById('hscin').value;
+    var hscb = document.getElementById('hscb').value;
+    var hscp = document.getElementById('hscp').value;
+    var sscin = document.getElementById('sscin').value;
+    var sscb = document.getElementById('sscb').value;
+    var sscp = document.getElementById('sscp').value;
+    var cp = document.getElementById('cp').value;
+    var cein = document.getElementById('cein').value;
+    var op = document.getElementsByName('op').value;
+    var cb = document.getElementById('cb').value;
+  
+    if (hscin == "") {
+      alert("Please fill the HSC Institution field.")
+      return false;
+    }
+    if ((hscin.length <= 5) || (hscin.length > 20)) {
+      alert("HSC Institution length must be between 5 to 20.")
+      return false;
+    }
+    if (!isNaN(hscin)) {
+      alert("Only characters are allowed in hsc institute name.")
+      return false;
+    }
+
+    if (hscb == "") {
+      alert("Please fill the HSC Board field.")
+      return false;
+    }
+    if ((hscb.length <= 5) || (hscb.length > 20)) {
+      alert("HSC Board length must be between 5 to 20.")
+      return false;
+    }
+    if (!isNaN(hscb)) {
+      alert("Only characters are allowed in hsc board name.")
+      return false;
+    }
+    
+    if (hscp == "") {
+      alert("Please fill HSC percentage field.")
+      return false;
+    }
+    if ((hscp.length <= 1) || (hscp.length > 3)) {
+      alert("HSC Percentage sould be valid %.")
+      return false;
+    }
+    if (sscin == "") {
+      alert("Please fill the SSC Institution field.")
+      return false;
+    }
+    if ((sscin.length <= 5) || (sscin.length > 20)) {
+      alert("SSC Institution length must be between 5 to 20.")
+      return false;
+    }
+    if (!isNaN(sscin)) {
+      alert("Only characters are allowed in ssc institute name.")
+      return false;
+    }
+
+    if (sscb == "") {
+      alert("Please fill the SSC Board field.")
+      return false;
+    }
+    if ((sscb.length <= 5) || (sscb.length > 20)) {
+      alert("SSC Board length must be between 5 to 20.")
+      return false;
+    }
+    if (!isNaN(sscb)) {
+      alert("Only characters are allowed in ssc board name.")
+      return false;
+    }
+    
+    if (sscp == "") {
+      alert("Please fill the SSC Percentage field.")
+      return false;
+    }
+    if ((sscp.length <= 1) || (sscp.length > 3)) {
+      alert("SSC Percentage sould be valid %.")
+      return false;
+    }
+   
+    if (cp == "") {
+      alert("Please fill the Current Persuing field.")
+      return false;
+    }
+    if ((cp.length <= 3) || (cp.length > 10)) {
+      alert("Current persuing length must be between 3 to 10.")
+      return false;
+    }
+    if (!isNaN(cp)) {
+      alert("Only characters are allowed in Current Persuing.")
+      return false;
+    }
+    if (cein == "") {
+      alert("Please fill the Current education institute name field.")
+      return false;
+    }
+    if ((cein.length <= 5) || (cein.length > 20)) {
+      alert("Second name length must be between 5 to 20.")
+      return false;
+    }
+    if (!isNaN(cein)) {
+      alert("Only characters are allowed in current enducation field.")
+      return false;
+    }
+    if (op == "") {
+      alert("Please fill the overall percentage field.")
+      return false;
+    }
+    if ((op.length <= 1) || (op.length > 3)) {
+      alert("overall Percentage sould be valid %")
+      return false;
+    }
+    
+    if (cb == "") {
+      alert("Please fill the Current Backlogs field.")
+      return false;
+    }
+    if ((cb.length <= 0) || (cb.length > 11)) {
+      alert("Second name length must be between 0 to 11.")
+      return false;
+    }
+  }
+</script>
+
+</html>
